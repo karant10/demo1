@@ -8,9 +8,9 @@ function getFriend(req, res){
     const friendId = Number(req.params.friendId);
     const friend = friends[friendId];
     if (friend) {
-        res.status(200).json(friend);
+        res.status(configs.status_code_success).json(friend);
     } else {
-        res.status(404).json({
+        res.status(configs.status_code_failure).json({
             error: "Friend not found"
         });
     }
